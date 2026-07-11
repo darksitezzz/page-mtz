@@ -1,0 +1,161 @@
+/* --- Reseteo básico y Estilos Generales --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    /* CAMBIO AQUÍ: Tu imagen de fondo con una capa oscura para que resalte el texto */
+    background-image: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('IMAGENES/FONDO .jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* El fondo se queda fijo al hacer scroll */
+    
+    color: #f8fafc;
+    min-height: 100vh;
+    padding: 2rem 1rem;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+header h1 {
+    font-size: 2.8rem;
+    color: #38bdf8; /* Azul brillante */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para mejor lectura */
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    color: #cbd5e1;
+    font-size: 1.1rem;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* --- Contenedor de la Galería (Grid Responsivo) --- */
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- Tarjetas de la Galería --- */
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5); /* Sombra más marcada */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Borde fino elegante */
+    cursor: pointer;
+    aspect-ratio: 3 / 2;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+/* --- Efecto Overlay (Texto flotante) --- */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 23, 42, 0.65);
+    backdrop-filter: blur(4px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.overlay span {
+    color: #ffffff;
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transform: translateY(20px);
+    transition: transform 0.4s ease;
+}
+
+/* --- Hovers --- */
+.gallery-item:hover img {
+    transform: scale(1.1);
+    filter: brightness(0.8);
+}
+
+.gallery-item:hover .overlay {
+    opacity: 1;
+}
+
+.gallery-item:hover .overlay span {
+    transform: translateY(0);
+}
+
+/* --- El Lightbox (Modal oculto) --- */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.92);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    animation: fadeIn 0.3s ease;
+}
+
+.lightbox-content {
+    max-width: 85%;
+    max-height: 75%;
+    border-radius: 8px;
+    box-shadow: 0 0 30px rgba(56, 189, 248, 0.3);
+    animation: zoomIn 0.3s ease;
+}
+
+#caption {
+    margin-top: 15px;
+    color: #cbd5e1;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #f1f5f9;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.close-btn:hover {
+    color: #38bdf8;
+}
+
+/* --- Animaciones --- */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.9); }
+    to { transform: scale(1); }
+}

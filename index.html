@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Galería Interactiva</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Mi Galería de Fotos</h1>
+        <p>Una colección de momentos e imágenes asombrosas</p>
+    </header>
+
+    <main class="gallery-container">
+        <div class="gallery-item">
+            <img src="https://picsum.photos/id/1018/600/400" alt="Montañas en la niebla">
+            <div class="overlay"><span>Naturaleza</span></div>
+        </div>
+        
+        <div class="gallery-item">
+            <img src="https://picsum.photos/id/1015/600/400" alt="Valle verde">
+            <div class="overlay"><span>Paisaje</span></div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="https://picsum.photos/id/1016/600/400" alt="Cañón rocoso">
+            <div class="overlay"><span>Aventura</span></div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="https://picsum.photos/id/1025/600/400" alt="Cachorro en la manta">
+            <div class="overlay"><span>Animales</span></div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="https://picsum.photos/id/1043/600/400" alt="Playa al atardecer">
+            <div class="overlay"><span>Mar</span></div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="https://picsum.photos/id/1050/600/400" alt="Ciudad de noche">
+            <div class="overlay"><span>Urbano</span></div>
+        </div>
+    </main>
+
+    <div id="lightbox" class="lightbox">
+        <span class="close-btn">&times;</span>
+        <img class="lightbox-content" id="lightbox-img" src="" alt="">
+        <div id="caption"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
