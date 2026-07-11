@@ -9,7 +9,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     
     /* CAMBIO AQUÍ: Tu imagen de fondo con una capa oscura para que resalte el texto */
-    background-image: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('FONDO .jpg');
+    background-image: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('FONDO.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed; /* El fondo se queda fijo al hacer scroll */
