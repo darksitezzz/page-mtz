@@ -1,0 +1,118 @@
+/* --- Reseteo y Estilos Under --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* Cambiamos la fuente a monospace para ese toque raw/underground */
+    font-family: 'Space Mono', monospace, sans-serif;
+    
+    /* Fondo oscuro casi puro */
+    background-color: #050505;
+    background-image: radial-gradient(#1a1a1a 1px, transparent 1px);
+    background-size: 20px 20px; /* Le da un efecto de matriz de puntos muy sutil */
+    
+    color: #a3a3a3; /* Texto grisáceo para no cansar la vista */
+    min-height: 100vh;
+    padding: 3rem 1rem;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 4rem;
+    border-bottom: 1px dashed #333;
+    padding-bottom: 2rem;
+}
+
+header h1 {
+    font-size: 3rem;
+    color: #9d00ff; /* Mantenemos tu azul/morado brillante */
+    text-transform: uppercase;
+    letter-spacing: -2px;
+}
+
+header p {
+    color: #555;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+/* --- Contenedor del Blog --- */
+.blog-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    max-width: 800px; /* Más estrecho, típico de blogs de lectura */
+    margin: 0 auto;
+}
+
+/* --- Artículos (Posts) --- */
+.blog-post {
+    background: #0a0a0a;
+    border: 1px solid #222;
+    padding: 2rem;
+    transition: border-color 0.3s ease;
+}
+
+.blog-post:hover {
+    border-color: #9d00ff; /* Al pasar el mouse, el borde brilla */
+}
+
+.post-header {
+    margin-bottom: 1.5rem;
+}
+
+.post-date {
+    font-size: 0.8rem;
+    color: #666;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.post-header h2 a {
+    color: #f8fafc;
+    text-decoration: none;
+    font-size: 1.8rem;
+}
+
+.post-header h2 a:hover {
+    color: #9d00ff;
+    text-decoration: underline;
+}
+
+.post-image {
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    filter: grayscale(80%) contrast(1.2); /* Imágenes desaturadas para el estilo oscuro */
+    transition: filter 0.4s ease;
+}
+
+.post-image:hover {
+    filter: grayscale(0%) contrast(1); /* Recuperan color al hacer hover */
+}
+
+.post-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.post-content p {
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.read-more {
+    color: #9d00ff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.read-more:hover {
+    color: #fff;
+    background-color: #9d00ff;
+    padding: 2px 5px;
+}
